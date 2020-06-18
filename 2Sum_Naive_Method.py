@@ -1,10 +1,12 @@
 def two_sum(lis, target):
     
-    for i in range(len(lis)):
-        for j in range(i+1, len(lis)):
-            if lis[i]+ lis[j] == target:
-                return [i,j]
-    return "Target Sum not found "
+    s = {}
+    for i, num in enumerate(lis):
+        want = target - num
+        if want in s:
+            return [i,s[want]]
+        else:
+            s[num] = i
 
 target = int(input())
 lis = [int(x) for x in input().split()]
