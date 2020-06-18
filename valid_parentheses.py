@@ -12,7 +12,7 @@ def check(a):
             if not len(stack):
                 return False
             last = stack.pop()
-            if pair[last]!= pair:
+            if pair[last]!= i:
                 return False
     if len(stack):
         return False
